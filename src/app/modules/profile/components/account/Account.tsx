@@ -13,7 +13,7 @@ export function Account() {
   const [data, setData] = useState<IAccount>(defaultAccount);
   //const [hasError, setHasError] = useState(false);
   const userObj : any = useSelector<RootState>((state) => state.auth.user)
-  const {email, name} = userObj.data
+  const {email, name, phone, company} = userObj.data
   console.log(userObj)
   const [showCreateAppModal, setShowCreateAppModal] = useState(false);
   const updateData = (fieldsToUpdate: Partial<IAccount>) => {
@@ -62,15 +62,48 @@ export function Account() {
                     disabled
                   />
                 </div>
-                <div className="form-text">
+                {/* <div className="form-text">
                   Email will not be publicly displayed.{" "}
                   .
+                </div> */}
+                
+              </div>
+            </div>
+            {/* begin::Form row */}
+            <div className="row mb-8">
+              <label className="col-lg-3 col-form-label">Phone</label>
+              <div className="col-lg-9">
+                <div className="spinner spinner-sm spinner-primary spinner-right">
+                  <input
+                    className="form-control form-control-lg form-control-solid"
+                    type="text"
+                    value={phone}
+                    onChange={(e) => updateData({ username: e.target.value })}
+                    disabled
+                    placeholder={phone}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="row mb-8">
+              <label className="col-lg-3 col-form-label">company</label>
+              <div className="col-lg-9">
+                <div className="spinner spinner-sm spinner-primary spinner-right">
+                  <input
+                    className="form-control form-control-lg form-control-solid"
+                    type="text"
+                    value={company}
+                    onChange={(e) => updateData({ username: e.target.value })}
+                    disabled
+                    placeholder={company}
+                  />
                 </div>
               </div>
             </div>
             {/* end::Form row */}
+            {/* end::Form row */}
             {/* begin::Form row */}
-            <div className="row mb-8">
+            {/* <div className="row mb-8">
               <label className="col-lg-3 col-form-label">
               Password reset
               </label>
@@ -90,16 +123,16 @@ export function Account() {
                   .
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* end::Form row */}
 
-            <div className="separator separator-dashed my-10"></div>
+            {/* <div className="separator separator-dashed my-10"></div> */}
 
             
 
 
             {/* begin::Form row */}
-            <div className="row">
+            {/* <div className="row">
               <label className="col-lg-3 col-form-label"></label>
               <div className="col-lg-9">
                 <button
@@ -115,7 +148,7 @@ export function Account() {
                   Cancel
                 </button>
               </div>
-            </div>
+            </div> */}
             {/* end::Form row */}
           </div>
         </form>

@@ -244,10 +244,10 @@ export const Exhibition = () => {
                     {/*begin::Details*/}
                     <div className="text-center mt-5 mb-md-0 mb-lg-5 mb-md-0 mb-lg-5 mb-lg-0 mb-5 d-flex flex-column">
                       <Link
-                        to="/shop/product/1"
+                        to="#"
                         className="fs-4 fw-bolder text-gray-800 text-hover-primary mb-1"
                       >
-                        {booth.informations.artist_name}
+                        <span className="badge badge-square badge-primary">#{i+1}</span>&nbsp;&nbsp;{booth.informations.artist_name}
                       </Link>
                       
                     </div>
@@ -287,6 +287,7 @@ export const Exhibition = () => {
                   <div className="card-body p-0">
                     {/*begin::Image*/}
                     <div className="overlay rounded overflow-hidden">
+                      
                       <div className="overlay-wrapper rounded bg-light   text-center">
                         <img
                           // src={toAbsoluteUrl("/media/products/1.png")}
@@ -328,7 +329,7 @@ export const Exhibition = () => {
                         to="/shop/product/1"
                         className="fs-4 fw-bolder text-gray-800 text-hover-primary mb-1"
                       >
-                        {booth.informations.artist_name}
+                        <span className="badge badge-square badge-primary">#{i+1}</span>&nbsp;&nbsp;{booth.informations.artist_name}
                       </Link>
                       <span className="fs-6">{booth.informations.piece_name}</span>
                     </div>
@@ -406,7 +407,7 @@ export const Exhibition = () => {
                         to="/shop/product/1"
                         className="fs-4 fw-bolder text-gray-800 text-hover-primary mb-1"
                       >
-                        {booth.informations.artist_name}
+                        <span className="badge badge-square badge-primary">#{i+1}</span>&nbsp;&nbsp;{booth.informations.artist_name}
                       </Link>
                       <span className="fs-6">{booth.informations.piece_name}</span>
                     </div>

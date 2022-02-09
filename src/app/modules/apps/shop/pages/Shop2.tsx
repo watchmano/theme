@@ -91,6 +91,7 @@ export function Shop2() {
                         >
                           {exhibition.title}
                         </Link>
+                        전시 이미지 미리보기 준비중입니다.
                       </h4>
                       
                     </div>

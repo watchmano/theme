@@ -17,33 +17,7 @@ export function AsideMenuCreate() {
   return (
     
     <>
-      <>
-        <div className="menu-item">
-          <h4 className="menu-content text-muted mb-0 fs-6 fw-bold text-uppercase">
-            Poster
-          </h4>
-        </div>
-        
-
-
-        {/*begin::Accordion*/}
-        <div className="accordion" id="accordionExample">
-          <div className="accordion-item">
-            <h2 className="accordion-header" id="headingOne">
-              <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                포스터 펼치기
-              </button>
-            </h2>
-            <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-              <div className="accordion-body">
-                <strong>This is the first item's accordion body.</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/*end::Accordion*/}
-      </>
-      <div className="separator separator-dashed my-10"></div>
+      
       <>
         <div className="menu-item">
           <h4 className="menu-content text-muted mb-0 fs-6 fw-bold text-uppercase">
@@ -98,8 +72,9 @@ export function AsideMenuCreate() {
                   i >= 7 && i <=13 ?  
                   <div>
                     <div>
-                      <strong>{booths && booths[i].informations.piece_name}</strong>
-                    </div>
+                    <button className="btn btn-color-gray-600 btn-active-light-primary">
+                        {booths && booths[i].informations.piece_name}
+                      </button></div>
                     <div className="border-bottom w-100 mb-5 mt-5"></div>
                   </div> :
                   <div></div>
@@ -131,8 +106,9 @@ export function AsideMenuCreate() {
                   i >= 14 && i <=19 ?  
                   <div>
                     <div>
-                      <strong>{booths && booths[i].informations.piece_name}</strong>
-                    </div>
+                    <button className="btn btn-color-gray-600 btn-active-light-primary">
+                        {booths && booths[i].informations.piece_name}
+                      </button></div>
                     <div className="border-bottom w-100 mb-5 mt-5"></div>
                   </div> :
                   <div></div>
