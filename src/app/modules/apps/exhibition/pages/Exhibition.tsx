@@ -58,9 +58,6 @@ export const Exhibition = () => {
           {/*begin::Heading*/}
           <div className="d-flex justify-content-between align-items-center mb-7">
             <h2 className="fw-bolder text-dark fs-2 mb-0">전시 정보 편집</h2>
-            <a href="#" className="btn btn-light-primary btn-sm fw-bolder">
-              View All
-            </a>
           </div>
           {/*end::Heading*/}
 
@@ -88,12 +85,6 @@ export const Exhibition = () => {
                       
                     </div>
                     <div className="overlay-layer">
-                      <Link
-                        to="#"
-                        className="btn fw-bolder btn-sm btn-primary me-2"
-                      >
-                        위치확인
-                      </Link>
                       <Link
                         to="#"
                         className="btn fw-bolder btn-sm btn-light-primary"
@@ -130,24 +121,21 @@ export const Exhibition = () => {
 
 
         {/*begin::Section*/}
-        <div className="mb-10">
-          {/*begin::Heading*/}
+        {/* <div className="mb-10">
+          
           <div className="d-flex justify-content-between align-items-center mb-7">
             <h2 className="fw-bolder text-dark fs-2 mb-0">작가 정보 편집</h2>
-            <a href="#" className="btn btn-light-primary btn-sm fw-bolder">
-              View All
-            </a>
           </div>
-          {/*end::Heading*/}
+          
 
-          {/*begin::Products*/}
+          
           <div className="row g-5 g-xxl-8">
-            {/*begin::Product*/}
+            
             <div className="col-md-4 col-xxl-4 col-lg-12">
-              {/*begin::Card*/}
+              
               <div className="card card-custom shadow-none">
                 <div className="card-body p-0">
-                  {/*begin::Image*/}
+                  
                   <div className="overlay rounded overflow-hidden">
                     <div className="overlay-wrapper rounded bg-light   text-center">
                     {thumbnailAssetUrl ? 
@@ -166,12 +154,6 @@ export const Exhibition = () => {
                     <div className="overlay-layer">
                       <Link
                         to="#"
-                        className="btn fw-bolder btn-sm btn-primary me-2"
-                      >
-                        위치확인
-                      </Link>
-                      <Link
-                        to="#"
                         className="btn fw-bolder btn-sm btn-light-primary"
                         onClick={()=> toggleSideBar(null, 'artist')}
                       >
@@ -179,9 +161,9 @@ export const Exhibition = () => {
                       </Link>
                     </div>
                   </div>
-                  {/*end::Image*/}
+                  
 
-                  {/*begin::Details*/}
+                  
                   <div className="text-center mt-5 mb-md-0 mb-lg-5 mb-md-0 mb-lg-5 mb-lg-0 mb-5 d-flex flex-column">
                     <Link
                       to="/shop/product/1"
@@ -190,18 +172,18 @@ export const Exhibition = () => {
                       {title}
                     </Link>
                   </div>
-                  {/*end::Details*/}
+                  
                 </div>
               </div>
               
-              {/*end::Card*/}
+              
             </div>
-            {/*end::Product*/}
+          
 
             
           </div>
-          {/*end::Products*/}
-        </div>
+          
+        </div> */}
         {/*end::Section*/}
 
         {/*begin::Section*/}
@@ -209,9 +191,6 @@ export const Exhibition = () => {
           {/*begin::Heading*/}
           <div className="d-flex justify-content-between align-items-center mb-7">
             <h2 className="fw-bolder text-dark fs-2 mb-0">1st ~ 7th Booths Edit</h2>
-            <a href="#" className="btn btn-light-primary btn-sm fw-bolder">
-              View All
-            </a>
           </div>
           {/*end::Heading*/}
 
@@ -237,12 +216,6 @@ export const Exhibition = () => {
                         />
                       </div>
                       <div className="overlay-layer">
-                        <Link
-                          to="#"
-                          className="btn fw-bolder btn-sm btn-primary me-2"
-                        >
-                          위치확인
-                        </Link>
                         <Link
                           to="#"
                           className="btn fw-bolder btn-sm btn-light-primary"
@@ -276,8 +249,7 @@ export const Exhibition = () => {
                       >
                         {booth.informations.artist_name}
                       </Link>
-                      {getAssetUrl(booth.assetId)}
-                      <span className="fs-6">{booth.informations.piece_name}</span>
+                      
                     </div>
                     {/*end::Details*/}
                   </div>
@@ -301,9 +273,6 @@ export const Exhibition = () => {
           {/*begin::Heading*/}
           <div className="d-flex justify-content-between align-items-center mb-7">
             <h2 className="fw-bolder text-dark fs-2 mb-0">8th ~ 14th Booths Edit</h2>
-            <a href="#" className="btn btn-light-primary btn-sm fw-bolder">
-              View All
-            </a>
           </div>
           {/*end::Heading*/}
 
@@ -328,12 +297,6 @@ export const Exhibition = () => {
                         />
                       </div>
                       <div className="overlay-layer">
-                        <Link
-                          to="#"
-                          className="btn fw-bolder btn-sm btn-primary me-2"
-                        >
-                          위치확인
-                        </Link>
                         <Link
                           to="#"
                           className="btn fw-bolder btn-sm btn-light-primary"
@@ -388,9 +351,6 @@ export const Exhibition = () => {
           {/*begin::Heading*/}
           <div className="d-flex justify-content-between align-items-center mb-7">
             <h2 className="fw-bolder text-dark fs-2 mb-0">15th ~ 20th Booths Edit</h2>
-            <a href="#" className="btn btn-light-primary btn-sm fw-bolder">
-              View All
-            </a>
           </div>
           {/*end::Heading*/}
 
@@ -415,12 +375,6 @@ export const Exhibition = () => {
                         />
                       </div>
                       <div className="overlay-layer">
-                        <Link
-                          to="#"
-                          className="btn fw-bolder btn-sm btn-primary me-2"
-                        >
-                          위치확인
-                        </Link>
                         <Link
                           to="#"
                           className="btn fw-bolder btn-sm btn-light-primary"
