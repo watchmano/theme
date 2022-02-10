@@ -206,14 +206,17 @@ export const Exhibition = () => {
                     {/*begin::Image*/}
                     <div className="overlay rounded overflow-hidden">
                       <div className="overlay-wrapper rounded bg-light   text-center">
-                      
-                        <img
-                          // src={toAbsoluteUrl("/media/products/1.png")}
-                          src={getAssetUrl(booth.assetId)}
-                          // alt="https://upload.wikimedia.org/wikipedia/commons/c/c0/Image_needed%2C_please_upload_to_commons.wikimedia.org.jpg"
+                        {booth.assetUrl.includes('video') ? <video className="mw-100 w-200px">
+                            <source src={booth.assetUrl} type="video/mp4" />
+                          </video> : <img className="mw-100 w-200px" height="100%" src={booth.assetUrl} alt="img" ></img>
+                        }
+                        {/* <img
+                          
+                          src={booth.assetUrl}
+                          
                           onError={addDefaultSrc}
                           className="mw-100 w-200px"
-                        />
+                        /> */}
                       </div>
                       <div className="overlay-layer">
                         <Link
@@ -289,13 +292,10 @@ export const Exhibition = () => {
                     <div className="overlay rounded overflow-hidden">
                       
                       <div className="overlay-wrapper rounded bg-light   text-center">
-                        <img
-                          // src={toAbsoluteUrl("/media/products/1.png")}
-                          src={getAssetUrl(booth.assetId)}
-                          alt=""
-                          onError={addDefaultSrc}
-                          className="mw-100 w-200px"
-                        />
+                        {booth.assetUrl.includes('video') ? <video className="mw-100 w-200px">
+                            <source src={booth.assetUrl} type="video/mp4" />
+                          </video> : <img className="mw-100 w-200px" height="100%" src={booth.assetUrl} alt="img" ></img>
+                        }
                       </div>
                       <div className="overlay-layer">
                         <Link
@@ -367,13 +367,10 @@ export const Exhibition = () => {
                     {/*begin::Image*/}
                     <div className="overlay rounded overflow-hidden">
                       <div className="overlay-wrapper rounded bg-light   text-center">
-                        <img
-                          // src={toAbsoluteUrl("/media/products/1.png")}
-                          src={getAssetUrl(booth.assetId)}
-                          alt=""
-                          onError={addDefaultSrc}
-                          className="mw-100 w-200px"
-                        />
+                        {booth.assetUrl.includes('video') ? <video className="mw-100 w-200px">
+                            <source src={booth.assetUrl} type="video/mp4" />
+                          </video> : <img className="mw-100 w-200px" height="100%" src={booth.assetUrl} alt="img" ></img>
+                        }
                       </div>
                       <div className="overlay-layer">
                         <Link

@@ -43,8 +43,8 @@ export function PrivateRoutes() {
         <Route path="/exhibition" component={ExhibitionWrapper} />
         
         <Route path="/docs" component={DocsPageWrapper} />
-        <Redirect from="/auth" to="/dashboard" />
-        <Redirect exact from="/" to="/dashboard" />
+        <Redirect from="/auth" to="/profile/account" />
+        <Redirect exact from="/" to="/profile/account" />
         <Redirect to="error/404" />
       </Switch>
     </Suspense>

@@ -29,5 +29,6 @@ export interface UserModel {
   exhibition?: any;
   externalLink?: any;
   data?:any;
+  booths?:any;
 
 }

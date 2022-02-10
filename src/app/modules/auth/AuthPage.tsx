@@ -35,9 +35,9 @@ export function AuthPage() {
 
             {/* begin::Aside Subtitle */}
             <h3 className="fw-bolder fs-2x text-white lh-lg">
-              Discover Start
+              오직 당신만을 위한 공간
               <br />
-              with great build tools
+              지금 시작하세요
             </h3>
             {/* end::Aside Subtitle */}
           </div>
@@ -64,7 +64,7 @@ export function AuthPage() {
               <Redirect to="/auth/login" />
             </Switch>
           </div>
-          <div className="d-flex justify-content-lg-start justify-content-center align-items-center py-7 py-lg-0">
+          {/* <div className="d-flex justify-content-lg-start justify-content-center align-items-center py-7 py-lg-0">
             <span className="text-primary fw-bolder fs-4 cursor-pointer">
               Terms
             </span>
@@ -72,7 +72,7 @@ export function AuthPage() {
             <span className="text-primary ms-10 fw-bolder fs-4">
               Contact Us
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

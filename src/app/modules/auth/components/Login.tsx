@@ -66,21 +66,20 @@ export function Login() {
     >
       {/* begin::Title */}
       <div className="pb-lg-15">
-        <h3 className="fw-bolder text-dark display-6">Welcome to Start</h3>
+        <h3 className="fw-bolder text-dark display-6">Welcome to 360XCON</h3>
         <div className="text-muted fw-bold fs-3">
-          New Here?{" "}
           <Link
             to="/auth/registration"
             className="text-primary fw-bolder"
             id="kt_login_signin_form_singup_button"
           >
-            Create Account
+            회원가입
           </Link>
         </div>
       </div>
       {/* begin::Title */}
 
-      {formik.status ? (
+      {/* {formik.status ? (
         <div className="mb-lg-15 alert alert-danger">
           <div className="alert-text font-weight-bold">{formik.status}</div>
         </div>
@@ -91,7 +90,7 @@ export function Login() {
             <strong>demo</strong> to sign in.
           </div>
         </div>
-      )}
+      )} */}
 
       {/* begin::Form group */}
       <div className="v-row mb-10 fv-plugins-icon-container">
@@ -125,13 +124,13 @@ export function Login() {
             Password
           </label>
 
-          <Link
+          {/* <Link
             to="/auth/forgot-password"
             className="text-primary fs-6 fw-bolder text-hover-primary pt-5"
             id="kt_login_signin_form_password_reset_button"
           >
             Forgot Password ?
-          </Link>
+          </Link> */}
         </div>
         <input
           type="password"
@@ -171,7 +170,7 @@ export function Login() {
             </span>
           )}
         </button>
-        <button
+        {/* <button
           type="button"
           className="btn btn-light-primary fw-bolder px-8 py-4 my-3 fs-6 mr-3"
         >
@@ -181,7 +180,7 @@ export function Login() {
             alt=""
           />
           Sign in with Google
-        </button>
+        </button> */}
       </div>
       {/* end::Action */}
     </form>

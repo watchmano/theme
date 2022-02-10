@@ -56,7 +56,7 @@ export function getAllExhibitions() {
 
 // /admin/exhibition/:code
 export function getExhibition(code:any) {
-  return axios.get<AnySchema>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}`);
+  return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}`);
 }
 
 export function getExhibitionIntro(code:any) {

@@ -101,7 +101,12 @@ const NewExhibitionForm: React.FC<Props> = ({
 
   // On file select (from the pop up)
   const onFileChange = (event:any) => {
-    
+
+    const {size, name, type} = event.target.files[0]  
+    if(type.includes("video")) {
+      alert('전시 썸네일은 이미지 양식만 사용 가능합니다.')
+      return
+    }
     // Update the state
     // setSelectedFile({ selectedFile: event.target.files[0] });
     setSelectedFile(event.target.files[0]);
@@ -144,7 +149,7 @@ const NewExhibitionForm: React.FC<Props> = ({
     >
       {/* begin::Heading */}
       <div className="d-flex flex-column text-center mb-10">
-        <h3 className="fs-2 fw-bolder mb-2">Change Exhibitions Info</h3>
+        <h3 className="fs-2 fw-bolder mb-2">Change Exhibition Info</h3>
         <span className="text-muted fs-6 fw-bolder">Quick Create Form</span>
       </div>
       {/* end::Heading*/}

@@ -6,7 +6,7 @@ import { checkIsActive } from "../../../helpers";
 import EditContext from '../../../../app/context/edit/EditContext';
 import { useSelector, useDispatch } from 'react-redux'
 import { RootState } from "../../../../setup";
-import { getExhibition, getContacts } from "../../../../app/modules/auth/redux/AuthCRUD";
+import { getExhibition, getContacts, getAllBooths } from "../../../../app/modules/auth/redux/AuthCRUD";
 import * as auth from "../../../../app/modules/auth/redux/AuthRedux";
 import SideMenuContext from '../../../../app/context/sideMenu/SideMenuContext';
 
@@ -61,13 +61,16 @@ const AsideMenuItem: React.FC<Props> = ({
                   selectExhibition(index)
                   // startEditMode(true)
                   getExhibition(code)
-                  .then(({ data: exhibition }) => {
+                  .then(async ({ data: exhibition }) => {
                     // item.classList.remove("showing");
                     // item.classList.add("show");
                     // switchSideMenu('create')
                     // setLoading(false);
                     // dispatch(auth.actions.login(accessToken));
                     console.log('fromAside...', exhibition)
+                    const boothsResult = await getAllBooths(code)
+                    const {booths}:any = boothsResult.data
+                    exhibition.booths = booths
                     dispatch(auth.actions.fulfillExhibition(exhibition));
                     const oldTab = document.getElementById('kt_aside_tab_4');
                     oldTab?.classList.remove("show", "active")

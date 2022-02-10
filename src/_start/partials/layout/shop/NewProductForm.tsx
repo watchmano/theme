@@ -39,7 +39,8 @@ const NewProductForm: React.FC<Props> = ({
   const boothNumberParsed = boothNumber ? parseInt(boothNumber) : 0
   const {      
     informations,
-    assetId
+    assetId,
+    assetUrl
   } = booths[boothNumberParsed]
 
   const {      
@@ -133,7 +134,13 @@ const NewProductForm: React.FC<Props> = ({
             <div
               className="overlay-wrapper symbol-label img-preview"
             >
-              <img className="output" height="100%" src={getAssetUrl(assetId)} alt="img" ></img>
+              {assetUrl.includes('video') ? <video style={{ 
+                  width: "100%"
+                }} controls>
+                  <source src={assetUrl} type="video/mp4" />
+                </video> : <img className="output" height="100%" src={assetUrl} alt="img" ></img>
+              }
+              
             </div>
             <label
               htmlFor="file-upload"
