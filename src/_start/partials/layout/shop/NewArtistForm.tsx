@@ -99,7 +99,7 @@ const NewArtistForm: React.FC<Props> = ({
     // Request made to the backend api
     // Send formData object
     // axios.post(`http://23.101.14.138:8080/admin/exhibition/${exhibition.code}/booth/${boothNumberParsed} /asset`, formData);
-    axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${exhibitionCode}/profile`, formData);
+    axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${exhibitionCode}/profile`, formData);
   };
 
   return (

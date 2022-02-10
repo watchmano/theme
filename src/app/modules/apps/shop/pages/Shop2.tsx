@@ -15,11 +15,11 @@ export function Shop2() {
   const [exhibitionThumbnails, setExhibitionThumbnails] = useState<any>({})
 
   useEffect(() => {
-    console.log(exhibitions[1].exhibitionCode)
+    console.log(exhibitions[0].exhibitionCode)
     const cycleNum = exhibitions.length
     exhibitions.map((exhibition:any, index:number) => {
       console.log(exhibition.exhibitionCode)
-      axios.get(`https://dev-api.dtype.360xcon.com/admin/exhibition/${exhibition.exhibitionCode}`)
+      axios.get(`https://api.dtype.360xcon.com/admin/exhibition/${exhibition.exhibitionCode}`)
         .then((result) => {
           console.log(result.data.thumbnailAssetId)
           const thumbnailAssetId = result.data.thumbnailAssetId
@@ -40,7 +40,7 @@ export function Shop2() {
 
 
   const getThumbnailsOrWhat = async (exhibitionCode:any, index:any) => {
-    const request = await axios.get(`https://dev-api.dtype.360xcon.com/admin/exhibition/${exhibitionCode}`)
+    const request = await axios.get(`https://api.dtype.360xcon.com/admin/exhibition/${exhibitionCode}`)
     const thumbnailAssetId = request.data.thumbnailAssetId
     console.log(request)
     setExhibitionThumbnails({...exhibitionThumbnails, [index]: `https://xconimages.blob.core.windows.net/dtype-dev/${thumbnailAssetId}`})

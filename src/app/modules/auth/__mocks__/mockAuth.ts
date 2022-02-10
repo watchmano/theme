@@ -77,7 +77,7 @@ export function mockAuth(mock: MockAdapter) {
   });
 
 
-  mock.onPost('https://dev-api.dtype.360xcon.com/admin/exhibition/dataking3/booth/0/asset').reply(({ data }) => {
+  mock.onPost('https://api.dtype.360xcon.com/admin/exhibition/dataking3/booth/0/asset').reply(({ data }) => {
     console.log('hello')
     
 

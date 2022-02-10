@@ -16,7 +16,7 @@ export const UPDATE_BOOTH_INFO = `http://23.101.14.138:8080/admin/exhibition/:co
 // Server should return AuthModel
 export function login(email: string, password: string) {
   // return axios.post(LOGIN_URL, { email, password });
-  return axios.post('https://dev-auth.dtype.360xcon.com/api/v1/auth/user/login', { email, password });
+  return axios.post('https://auth.360xcon.com/api/v1/auth/user/login', { email, password });
 }
 
 
@@ -29,7 +29,7 @@ export function register(
     company: string,
     password: string
   ) {
-      return axios.post<AuthModel>('https://dev-auth.dtype.360xcon.com/api/v1/auth/user/', {
+      return axios.post<AuthModel>('https://auth.360xcon.com/api/v1/auth/user/', {
         name,
         email,
         phone,
@@ -47,40 +47,40 @@ export function getUserByToken() {
   // Authorization head should be fulfilled in interceptor.
   // Check common redux folder => setupAxios
   // return axios.get<UserModel>(GET_USER_BY_ACCESSTOKEN_URL);
-  return axios.get<UserModel>('https://dev-auth.dtype.360xcon.com/api/v1/auth/user');
+  return axios.get<UserModel>('https://auth.360xcon.com/api/v1/auth/user');
 }
 
 export function getAllExhibitions() {
-  return axios.get<UserModel>('https://dev-auth.dtype.360xcon.com/api/v1/auth/user/exhibition');
+  return axios.get<UserModel>('https://auth.360xcon.com/api/v1/auth/user/exhibition');
 }
 
 // /admin/exhibition/:code
 export function getExhibition(code:any) {
-  return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}`);
+  return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/${code}`);
 }
 
 export function getExhibitionIntro(code:any) {
-  return axios.get<AnySchema>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/intro`);
+  return axios.get<AnySchema>(`https://api.dtype.360xcon.com/admin/exhibition/${code}/intro`);
 }
 
 export function getAllBooths(code:string) {
-  return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/booths/all-informations`);
-  // return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
+  return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/${code}/booths/all-informations`);
+  // return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
 }
 
 export function getExternalLink(code:string) {
-  return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`);
-  // return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
+  return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`);
+  // return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
 }
 
 export function getThumbnails(code:string) {
-  return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`);
-  // return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
+  return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`);
+  // return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
 }
 
 export function getContacts(code:string) {
-  return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/contact`);
-  // return axios.get<UserModel>(`https://dev-api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
+  return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/${code}/contact`);
+  // return axios.get<UserModel>(`https://api.dtype.360xcon.com/admin/exhibition/Gogh/booths/all-informations`);
 }
 
 
@@ -117,7 +117,7 @@ export function updateBoothInfo(
       owner,
       createdDate
     } = body
-  return axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/booth/${number}/informations`, {
+  return axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${code}/booth/${number}/informations`, {
     artist_name,
     artist_detail,
     piece_name,
@@ -153,7 +153,7 @@ export function updateExhibitionInfo(
       description,
       exhibitionType
     } = body
-  return axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}`, {
+  return axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${code}`, {
     title,
     description,
     exhibitionType,
@@ -180,7 +180,7 @@ export function updateContactsInfo(
     console.log(body, '업데이트')
   console.log(params, 'update contactd!')
   const request = axios.put(
-    `https://dev-api.dtype.360xcon.com/admin/contact/${contactId}`,
+    `https://api.dtype.360xcon.com/admin/contact/${contactId}`,
     {
       data,
       dataType
@@ -213,11 +213,11 @@ export function uploadContactsInfo(
     } = body
     console.log(code, boothNum, body, 'from uploadContacts...')
   const request = (boothNum || boothNum === 0 ?
-                    axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/contact?boothNum=${boothNum}`, {
+                    axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${code}/contact?boothNum=${boothNum}`, {
                     data,
                     dataType
                     }) : 
-                    (axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/contact`, {
+                    (axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${code}/contact`, {
                       data,
                       dataType
                     })))
@@ -247,11 +247,11 @@ export function uploadExternalLinksInfo(
     } = body
     
   const request = (boothNum || boothNum === 0 ?
-                    axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/externalLink?boothNum=${boothNum}`, {
+                    axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${code}/externalLink?boothNum=${boothNum}`, {
                     link,
                     linkType
                     }) : 
-                    (axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`, {
+                    (axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`, {
                       link,
                       linkType
                     })))
@@ -277,7 +277,7 @@ export function modifyExternalLinksInfo(
     } = body
     
   const request = axios.put(
-    `https://dev-api.dtype.360xcon.com/admin/externalLink/${externalLinkId}`,
+    `https://api.dtype.360xcon.com/admin/externalLink/${externalLinkId}`,
     {
       link,
       linkType
@@ -296,7 +296,7 @@ export function deleteExternalLinksInfo(
     const {externalLinkId} = params
     
     
-  const request = axios.delete(`https://dev-api.dtype.360xcon.com/admin/externalLink/${externalLinkId}`)
+  const request = axios.delete(`https://api.dtype.360xcon.com/admin/externalLink/${externalLinkId}`)
   console.log(request)
   return request
 }
@@ -309,8 +309,8 @@ export function getExternalLinksInfo(
   },) {
     
   const {code, boothNum} = params
-  const request = boothNum || boothNum === 0 ? axios.get(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/externalLink?boothNum=${boothNum}`) : 
-    axios.get(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`)
+  const request = boothNum || boothNum === 0 ? axios.get(`https://api.dtype.360xcon.com/admin/exhibition/${code}/externalLink?boothNum=${boothNum}`) : 
+    axios.get(`https://api.dtype.360xcon.com/admin/exhibition/${code}/externalLink`)
   return request
 }
 
@@ -318,8 +318,8 @@ export function getContactsInfo(
   code:string, boothNum?:any,) {
     
   
-  const request = boothNum || boothNum === 0 ? axios.get(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/contact?boothNum=${boothNum}`) : 
-    axios.get(`https://dev-api.dtype.360xcon.com/admin/exhibition/${code}/contact`)
+  const request = boothNum || boothNum === 0 ? axios.get(`https://api.dtype.360xcon.com/admin/exhibition/${code}/contact?boothNum=${boothNum}`) : 
+    axios.get(`https://api.dtype.360xcon.com/admin/exhibition/${code}/contact`)
   return request
 }
 

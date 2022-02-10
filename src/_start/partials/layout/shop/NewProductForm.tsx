@@ -108,7 +108,7 @@ const NewProductForm: React.FC<Props> = ({
 
     // Request made to the backend api
     // Send formData object
-    axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/${exhibition.code}/booth/${boothNumberParsed} /asset`, formData);
+    axios.post(`https://api.dtype.360xcon.com/admin/exhibition/${exhibition.code}/booth/${boothNumberParsed} /asset`, formData);
     // axios.post(`https://dev-api.dtype.360xcon.com/admin/exhibition/dataking3/booth/0/asset`, formData);
   };
 
